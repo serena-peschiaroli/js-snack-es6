@@ -1,4 +1,4 @@
-// Definizione dell'array di squadre di calcio con proprietà inizializzate a 0
+// Definizione dell'array di squadre di calcio con proprietà  0
 const squadreCalcio = [
     {
         nome: "Squadra1",
@@ -27,12 +27,12 @@ const squadreCalcio = [
 ]
 
 
-// Funzione per generare numeri casuali compresi tra min e max
+// Funzione per  num
 function getRandomNumber (min,max){
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
-// Esempio di generazione e stampa di numeri casuali separati per punti fatti e falli subiti
+
 /*let newPuntiFatti = getRandomNumber(1 , 100);
 console.log(newPuntiFatti);
 
@@ -40,13 +40,13 @@ let newFalliSubiti = getRandomNumber(1, 100);
 console.log(newFalliSubiti);*/
 
 
-// Assegnazione di numeri casuali alle proprietà puntiFatti e falliSubiti di ciascuna squadra
+//  numeri casuali puntiFatti e falliSubiti 
 squadreCalcio.forEach(squadra => {
     squadra.puntiFatti = getRandomNumber(1, 100);
     squadra.falliSubiti = getRandomNumber(1, 100);
 });
 
-// Creazione di un nuovo array con destrutturazione contenente solo nomi e falli subiti
+// Creazione di un nuovo array, destrutturazione contenente solo nomi falli subiti
 const nuovoArray = [];
 
 squadreCalcio.forEach(squadra => {
@@ -56,20 +56,20 @@ squadreCalcio.forEach(squadra => {
 console.log(squadreCalcio);
 console.log(nuovoArray);
 
-// Creazione di un elemento <ul> per la lista
+// elemento <ul> 
 const ulElement = document.createElement('ul');
 
-// Iterazione attraverso le squadreCalcio
+// Iterazione squadreCalcio
 squadreCalcio.forEach(squadra => {
-    // Creazione di un elemento <li> per ogni squadra
+    // Creazione li x squadra
     const liElement = document.createElement('li');
 
-    // Aggiunta del testo all'elemento <li>
+    // Aggiunta testo
     liElement.textContent = `Nome: ${squadra.nome}, Falli subiti: ${squadra.falliSubiti}`;
 
-    // Aggiunta dell'elemento <li> all'elemento <ul>
+    // Aggiunta dell'elemento <li> 
     ulElement.appendChild(liElement);
 });
 
-// Aggiunta dell'elemento <ul> al documento (ad esempio, al body)
+// Aggiunta dell'elemento <ul> 
 document.body.appendChild(ulElement);
