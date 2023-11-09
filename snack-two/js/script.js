@@ -47,14 +47,24 @@ squadreCalcio.forEach(squadra => {
 });
 
 // Creazione di un nuovo array, destrutturazione contenente solo nomi falli subiti
-const nuovoArray = [];
+// const nuovoArray = [];
 
-squadreCalcio.forEach(squadra => {
+//UTILIZZO DI MAP INVECE DI FOR-EACH
+
+// Creazione di un nuovo array contenente solo nomi e falli subiti usando map
+const nuovoArray = squadreCalcio.map(squadra => {
+    const { nome, falliSubiti } = squadra;
+    return { nome, falliSubiti };
+});
+
+console.log(nuovoArray);
+
+/*squadreCalcio.forEach(squadra => {
     const { nome, falliSubiti } = squadra;
     nuovoArray.push({ nome, falliSubiti });
 });
 console.log(squadreCalcio);
-console.log(nuovoArray);
+console.log(nuovoArray);*/
 
 // elemento <ul> 
 const ulElement = document.createElement('ul');
